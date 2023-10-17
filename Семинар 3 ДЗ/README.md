@@ -23,9 +23,6 @@
 
 **![](2.1.png)**
 
-**name varchar** 1 **name varchar street house apartment** city\_name varchar \* street\_name varchar \* 1 **name varchar** 1 **id integer** 1 **id integer**
-
-house\_id integer \* apartment\_id integer \*
 
   *  Две команды играют друг против друга в футбол под руководством арбитра
  
