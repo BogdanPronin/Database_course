@@ -15,58 +15,13 @@
  * Каждому читателю присваивается уникальный номер. У читателя есть Фамилия, Имя, адрес и день рождения. Читатель может взять один или несколько экземпляров книг. При взятии книги записывается запланированая дата возврата.  
 
 
-**copy![](1.png)**
-
-1 **copy\_num integer**
-
-**reader**
-
-**integer** 1 shelf\_arrangement varchar **publishing\_house**
-
-**id**
-
-name varchar 1 **id integer** lname varchar name varchar
-
-**publishing**
-
-adress varchar \* adress varchar
-
-**publishing\_house\_id integer**
-
-date\_of\_bday varchar **integer** \*
-
-**book\_ISBN**
-
-**take\_copy\_quantity**
-
-**book\_category subcategory**
-
-**take** \* **take\_id integer**
-
-**book** \* book\_ISBN **category** \* **category\_name varchar id integer** 1 **copy\_num integer** \* varchar 1 **name varchar** 1 \*
-
-\* 1 **ISBN varchar** 1 category\_name varchar \* **subcategory\_name varchar**
-
-reader\_id integer
-
-name varchar
-
-date\_of\_issue varchar
-
-pages\_quantity integer
-
-date\_of\_handover varchar
-
-**book\_copy**
-
-**copy\_num varchar** \* **book\_ISBN varchar** \*
-
+**![](1.png)**
 
  **Задача 2.** 
 
   *  Квартира расположена в доме на улице в городе в стране
 
-**country city![](2.1.png)**
+**![](2.1.png)**
 
 **name varchar** 1 **name varchar street house apartment** city\_name varchar \* street\_name varchar \* 1 **name varchar** 1 **id integer** 1 **id integer**
 
@@ -74,30 +29,20 @@ house\_id integer \* apartment\_id integer \*
 
   *  Две команды играют друг против друга в футбол под руководством арбитра
  
- **team![](2.2.png)**
+ **![](2.2.png)**
 
-**team\_person game**
 
-1 **id integer** 1
-
-**team\_id integer** \* \* **arbitor\_id integer person\_id integer** \* \* team\_1\_id integer
-
-\* team\_2\_id integer
-
-**person**
-
-**id integer** 1 name varchar
 
   *  У каждого человека (мужчины и женщины) есть отец и мать
 
-**relation![](2.3.png)**
+**![](2.3.png)**
 
-**person**
+**Задача 3.**
+Переведите приведенные диаграммы ER в реляционные схемы. <br>
+3.1. https://imgur.com/w2iDI1o <br>
 
-**id integer**
+**![](3.1.png)**
 
-1 **id integer**
+3.2. https://imgur.com/oFBM5pp
 
-parent\_id integer \*
-
-child\_id integer \*
+**![](3.2.png)**
