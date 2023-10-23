@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  ambulance-master:
+    image: bitnami/postgresql-repmgr:latest
+    environment:
+      POSTGRESQL_POSTGRES_PASSWORD: adminpassword
+      POSTGRESQL_USERNAME: proninbpi214user
+      POSTGRESQL_PASSWORD: proninbpi214password
+      POSTGRESQL_DATABASE: proninbpi214database
+      REPMGR_PASSWORD: repmgrpassword
+      REPMGR_PRIMARY_HOST: ambulance-master
+      REPMGR_PARTNER_NODES: ambulance-master,ambulance-slave
+      REPMGR_NODE_NAME: node-1
+      REPMGR_NODE_NETWORK_NAME: ambulance-master
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d/
+      - postgres_master_data:/bitnami/postgresql
+
+  ambulance-slave:
+    image: bitnami/postgresql-repmgr:latest
+    environment:
+      POSTGRESQL_POSTGRES_PASSWORD: adminpassword
+      POSTGRESQL_USERNAME: proninbpi214user
+      POSTGRESQL_PASSWORD: proninbpi214password
+      POSTGRESQL_DATABASE: proninbpi214database
+      REPMGR_PASSWORD: repmgrpassword
+      REPMGR_PRIMARY_HOST: ambulance-master
+      REPMGR_PARTNER_NODES: ambulance-master,ambulance-slave
+      REPMGR_NODE_NAME: node-2
+      REPMGR_NODE_NETWORK_NAME: ambulance-slave
+    ports:
+      - "5433:5432"
+    depends_on:
+      - ambulance-master
+    volumes:
+      - postgres_slave_data:/bitnami/postgresql
+
+volumes:
+  postgres_master_data:
+    driver: local
+  postgres_slave_data:
+    driver: local
